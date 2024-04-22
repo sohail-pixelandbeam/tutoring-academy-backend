@@ -1,0 +1,38 @@
+name: depoy-to-azure
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      AzureWebJobsStorage: ${{ secrets.AZUREWEBJOBSSTORAGE }}
+      AZURE_ACCOUNT_NAME: ${{ secrets.AZURE_ACCOUNT_NAME }}
+      AZURE_BLOB_CONT_NAME: ${{ secrets.AZURE_BLOB_CONT_NAME }}
+      AZURE_BLOB_SAS_TOKEN: ${{ secrets.AZURE_BLOB_SAS_TOKEN }}
+      AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      CLERK_SECRET_KEY1: ${{ secrets.CLERK_SECRET_KEY1 }}
+      JWTSECRETKEY: ${{ secrets.JWTSECRETKEY }}
+      NODE_ENV: ${{ secrets.NODE_ENV }}
+      PORT: ${{ secrets.PORT }}
+      Remote_Base: ${{ secrets.REMOTE_BASE }}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v3
+      - name: Setup nodejs version
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy to Azure app Service
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: learn-tutoringacademy-server
+          publish-profile: ${{ secrets.AZUREWEBAPPPUBLISHPROFILE }}
+          package: .

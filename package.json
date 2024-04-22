@@ -1,0 +1,59 @@
+{
+  "name": "tutoring-academy",
+  "version": "1.0.0",
+  "description": "A marketplace where students are matched with tutors. the heart of the software is a collaborating screen where a tutor can video chat with the student, and also use a whiteboard on the same screen to demonstrate the lesson.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Achifa/mm_telecom.git"
+  },
+  "author": "Marom Michael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Achifa/mm_telecom/issues"
+  },
+  "homepage": "https://github.com/Achifa/mm_telecom#readme",
+  "dependencies": {
+    "@azure/communication-sms": "^1.1.0",
+    "@azure/functions": "^4.3.0",
+    "@azure/identity": "^4.0.1",
+    "@azure/storage-blob": "^12.17.0",
+    "@azure/storage-queue": "^12.16.0",
+    "@clerk/clerk-js": "^4.70.0",
+    "@clerk/clerk-sdk-node": "^4.13.9",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "axios": "^1.6.2",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cookies": "^0.9.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "holidayapi": "^6.0.1",
+    "install": "^0.13.0",
+    "isomorphic-fetch": "^3.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^2.4.2",
+    "mocha": "^10.2.0",
+    "moment-timezone": "^0.5.43",
+    "mongodb": "^5.2.0",
+    "morgan": "^1.10.0",
+    "mssql": "^9.1.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "nginx": "^1.0.8",
+    "nodemon": "^2.0.21",
+    "path": "^0.12.7",
+    "peer": "^1.0.0",
+    "peerjs": "^1.4.7",
+    "pusher": "^5.1.2",
+    "short-id": "^0.1.0-1",
+    "socket.io": "^4.6.1",
+    "tedious": "^16.1.0"
+  }
+}
